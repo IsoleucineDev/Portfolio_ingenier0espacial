@@ -57,7 +57,7 @@ const MusicPlayer = ({ playlist }: MusicPlayerProps) => {
       // @ts-expect-error: SC no está tipado
       const SC = window.SC;
       if (SC) {
-        const playerWidget = SC.Widget(iframeRef.current);
+		const playerWidget = SC.Widget("soundcloud-player");
         setWidget(playerWidget);
 
         playerWidget.bind(SC.Widget.Events.READY, () => {
@@ -119,9 +119,10 @@ const MusicPlayer = ({ playlist }: MusicPlayerProps) => {
         </div>
 
         {/* Reproductor SoundCloud */}
-        <iframe
-          ref={iframeRef}
-          width="100%"
+		  <iframe
+  		  id="soundcloud-player"
+  		  ref={iframeRef}
+ 		  width="100%"        
           height={iframeHeight}
           scrolling="no"
           frameBorder="no"
