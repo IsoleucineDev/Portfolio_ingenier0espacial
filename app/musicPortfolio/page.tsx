@@ -15,8 +15,8 @@ export default function musicPortfolio() {
         title : "Corto JM"
       },
       {
-        url: "https://soundcloud.com/user-483599245/me-gustas-y-oajala-un-dia?in=user-483599245/sets/portafolio-animacion-cortos&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-        title : "Me gustas y Ojalá un día"
+        url: "https://soundcloud.com/user-483599245/ile",
+        title : "ile"
       },
       {
         url: "https://soundcloud.com/manuespacial-419137814/lejos-muy-lejos?in=user-483599245/sets/portafolio-animacion-cortos&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
