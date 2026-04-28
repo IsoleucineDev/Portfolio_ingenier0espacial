@@ -67,8 +67,4 @@ Toda crítica constructiva, sugerencia o contribución es bienvenida. Puedes abr
 
 MIT
 
-## Contacto
 
-- Email: tu-email@ejemplo.com
-- LinkedIn: [url_perfil]
-- Twitter: @
