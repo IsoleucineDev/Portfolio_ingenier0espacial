@@ -1,0 +1,41 @@
+{
+  "eyebrow": "About",
+  "headline": "A world\nbuilt in sound",
+  "image": {
+    "publicId": "clients/ingenier0espacial/avatar/victor-about",
+    "alt": "Víctor Manuel Canchola in his studio",
+    "width": 600,
+    "height": 800
+  },
+  "bio": {
+    "intro": "I'm Víctor Manuel Canchola Cervantes, music producer and composer from Querétaro, México.",
+    "paragraphs": [
+      "I specialize in creating and producing music for audiovisual media: video games, animation, and short films.",
+      "I'm the founder of Juliette!, a band where we blend alternative rock with Japanese rock, bossa nova, and Latin sound."
+    ],
+    "quote": "Sound doesn't accompany the image — it completes it."
+  },
+  "highlights": [
+    { "value": "5+",  "label": "years of experience" },
+    { "value": "20+", "label": "completed projects"  },
+    { "value": "4",   "label": "areas of expertise"  }
+  ],
+  "skills": [
+    {
+      "category": "Composition",
+      "items": ["Orchestral", "Electronic", "Ambient", "Rock", "Jazz / Bossa Nova"]
+    },
+    {
+      "category": "Production",
+      "items": ["Logic Pro X", "Mixing", "Mastering", "Live Recording"]
+    },
+    {
+      "category": "Game Audio",
+      "items": ["FMOD", "Wwise", "Unity Audio", "Adaptive Music"]
+    },
+    {
+      "category": "Post-Production",
+      "items": ["Foley", "Sound Design", "SFX", "Ambiences"]
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Custom Properties (defaults, overridden by ThemeProvider) ───────────── */
+:root {
+  --color-canvas:        #FDF6F0;
+  --color-paper:         #F5E6D8;
+  --color-ink:           #2A1A14;
+  --color-card:          #FAF0E8;
+  --color-prose:         #3D2B26;
+  --color-muted:         #7D5A52;
+  --color-subtle:        #A8857A;
+  --color-inverse:       #FDF6F0;
+  --color-border:        #E2CFC0;
+  --color-border-strong: #D4B8A8;
+  --color-sage:          #7CA36A;
+  --color-sage-light:    #B5C9A8;
+  --color-sage-dark:     #4A7A3D;
+  --color-rust:          #C98B6A;
+  --color-rust-light:    #E8B4A0;
+  --color-rust-dark:     #A06548;
+  --color-sky:           #D4BFCF;
+  --color-sky-light:     #EAD9E5;
+  --color-sky-dark:      #A8889A;
+  --color-gold:          #F0D090;
+  --color-gold-light:    #F7E8C0;
+  --color-lavender:      #D4BFCF;
+  --color-rose:          #E8B4A0;
+  --color-spring:        #AFE695;
+  --color-orange:        #DF822A;
+
+  --font-display: 'Shippori Mincho B1', 'Shippori Mincho', 'Georgia', serif;
+  --font-body:    'Outfit', system-ui, sans-serif;
+  --font-mono:    'Space Mono', monospace;
+  --font-hand:    'Caveat', cursive;
+}
+
+/* ── Base ────────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-canvas);
+  color: var(--color-prose);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Focus visible ─────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-rust);
+  outline-offset: 3px;
+}
+
+/* ── Selection ─────────────────────────────────────────────────────────────── */
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-prose);
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+/* ── Utilities ─────────────────────────────────────────────────────────────── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .font-hand {
+    font-family: var(--font-hand);
+  }
+
+  /* Stitched border utility */
+  .border-stitch {
+    border-style: dashed;
+    border-color: var(--color-border);
+  }
+
+  /* Washi tape utility */
+  .washi {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Artisanal corner accents (::before / ::after add corner marks) */
+  .corner-marks::before,
+  .corner-marks::after {
+    content: '+';
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--color-border-strong);
+    line-height: 1;
+  }
+  .corner-marks::before {
+    top: 2px;
+    left: 4px;
+  }
+  .corner-marks::after {
+    bottom: 2px;
+    right: 4px;
+  }
+}
+
+/* ── Audio player range input ────────────────────────────────────────────────── */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-sage);
+  border: 2px solid var(--color-canvas);
+  cursor: pointer;
+  box-shadow: 0 0 0 2px var(--color-sage);
+  transition: transform 0.1s ease;
+}
+input[type='range']::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+input[type='range']::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-sage);
+  border: 2px solid var(--color-canvas);
+  cursor: pointer;
+  box-shadow: 0 0 0 2px var(--color-sage);
+}
+
+/* ── Reduced motion ─────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,1 @@
+import{r as n}from"./react-vendor-C9Ey3eoJ.js";function s(){const[r,d]=n.useState(()=>typeof window<"u"?window.matchMedia("(prefers-reduced-motion: reduce)").matches:!1);return n.useEffect(()=>{const e=window.matchMedia("(prefers-reduced-motion: reduce)"),t=o=>d(o.matches);return e.addEventListener("change",t),()=>e.removeEventListener("change",t)},[]),r}export{s as u};

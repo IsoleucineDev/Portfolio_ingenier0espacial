@@ -1,0 +1,38 @@
+{
+  "eyebrow": "Hablemos",
+  "headline": "¿Tienes un mundo\npor sonorizar?",
+  "description": "Cuéntame sobre tu proyecto. Respondo en menos de 24 horas.",
+  "methods": [
+    {
+      "id": "whatsapp",
+      "type": "whatsapp",
+      "label": "WhatsApp",
+      "value": "+52 443 242 3432",
+      "href": "https://wa.me/524432423432?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto.",
+      "cta": "Escribir por WhatsApp",
+      "primary": true
+    },
+    {
+      "id": "instagram",
+      "type": "social",
+      "label": "Instagram",
+      "value": "@ingenier0espacial",
+      "href": "https://www.instagram.com/ingenier0espacial/",
+      "cta": "Mensaje en Instagram"
+    }
+  ],
+  "form": {
+    "enabled": true,
+    "provider": "formspree",
+    "endpoint": "REPLACE_WITH_FORMSPREE_ID",
+    "fields": [
+      { "name": "name",        "type": "text",     "label": "Nombre",                     "placeholder": "Tu nombre",    "required": true },
+      { "name": "email",       "type": "email",    "label": "Correo electrónico",          "placeholder": "tu@email.com", "required": true },
+      { "name": "projectType", "type": "select",   "label": "Tipo de proyecto",            "placeholder": "Selecciona",   "required": true,
+        "options": ["Composición para Videojuego", "Cortometraje / Animación", "Foley / Diseño Sonoro", "Producción Musical", "Arreglos", "Otro"] },
+      { "name": "message",     "type": "textarea", "label": "Cuéntame de tu proyecto",    "placeholder": "¿En qué consiste? ¿Cuál es el plazo? ¿Tienes referencias?", "required": true }
+    ],
+    "successMessage": "¡Mensaje enviado! Te respondo en menos de 24 horas.",
+    "errorMessage": "Hubo un error. Por favor escríbeme directamente por WhatsApp."
+  }
+}

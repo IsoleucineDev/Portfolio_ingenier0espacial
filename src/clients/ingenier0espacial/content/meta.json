@@ -1,0 +1,13 @@
+{
+  "siteName": "Víctor Manuel Canchola",
+  "defaultTitle": "Víctor Manuel Canchola | Compositor y Productor Musical",
+  "titleTemplate": "%s | Víctor Manuel Canchola",
+  "defaultDescription": "Compositor y productor musical especializado en videojuegos, foley y proyectos alternativos. Querétaro, México.",
+  "siteUrl": "https://ingenier0espacial.com",
+  "locale": "es_MX",
+  "og": {
+    "image": "clients/ingenier0espacial/ui/og-default",
+    "imageWidth": 1200,
+    "imageHeight": 630
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "colors": {
+    "canvas":        "#FDF6F0",
+    "paper":         "#F5E6D8",
+    "ink":           "#2A1A14",
+    "card":          "#FAF0E8",
+    "prose":         "#3D2B26",
+    "muted":         "#7D5A52",
+    "subtle":        "#A8857A",
+    "inverse":       "#FDF6F0",
+    "border":        "#E2CFC0",
+    "border-strong": "#D4B8A8",
+    "sage":          "#7CA36A",
+    "sage-light":    "#B5C9A8",
+    "sage-dark":     "#4A7A3D",
+    "rust":          "#C98B6A",
+    "rust-light":    "#E8B4A0",
+    "rust-dark":     "#A06548",
+    "sky":           "#D4BFCF",
+    "sky-light":     "#EAD9E5",
+    "sky-dark":      "#A8889A",
+    "gold":          "#F0D090",
+    "gold-light":    "#F7E8C0",
+    "lavender":      "#D4BFCF",
+    "rose":          "#E8B4A0",
+    "spring":        "#AFE695",
+    "orange":        "#DF822A"
+  },
+  "fonts": {
+    "display": "'Shippori Mincho B1', 'Shippori Mincho', 'Georgia', serif",
+    "body":    "'Outfit', system-ui, sans-serif",
+    "mono":    "'Space Mono', monospace",
+    "hand":    "'Caveat', cursive",
+    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;700;800&family=Shippori+Mincho:wght@400;700&family=Outfit:wght@300;400;500;600&family=Space+Mono&family=Caveat:wght@400;600&family=Klee+One:wght@400;600&family=Yomogi&family=Zen+Kurenaido&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+  },
+  "noise": true,
+  "cursor": false
+}

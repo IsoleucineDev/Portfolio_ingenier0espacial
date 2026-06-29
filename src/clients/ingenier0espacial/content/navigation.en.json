@@ -1,0 +1,18 @@
+{
+  "items": [
+    { "id": "home",        "label": "Home",      "path": "/",             "iconName": "Home"     },
+    { "id": "games",       "label": "Games",     "path": "/#videogames",  "iconName": "Gamepad2" },
+    { "id": "short-films", "label": "Films",     "path": "/#short-films", "iconName": "Film"     },
+    { "id": "foley",       "label": "Foley",     "path": "/#foley",       "iconName": "Ear"      },
+    { "id": "juliette",    "label": "Juliette!", "path": "/#juliette",    "iconName": "Music"    },
+    { "id": "about",       "label": "About",     "path": "/about",        "iconName": "User"     },
+    { "id": "contact",     "label": "Contact",   "path": "/contact",      "iconName": "Mail"     }
+  ],
+  "social": [
+    { "id": "spotify",      "platform": "spotify",      "url": "https://open.spotify.com/artist/4F2qB8AattAcKT4noCIqcd",                            "ariaLabel": "Listen on Spotify"       },
+    { "id": "soundcloud",   "platform": "soundcloud",   "url": "https://on.soundcloud.com/6HVpkskQcFtRcyre8",                                        "ariaLabel": "Listen on SoundCloud"    },
+    { "id": "instagram",    "platform": "instagram",    "url": "https://www.instagram.com/ingenier0espacial/",                                       "ariaLabel": "Follow on Instagram"     },
+    { "id": "youtube",      "platform": "youtube",      "url": "https://youtube.com/@bitscraft-o2g",                                                  "ariaLabel": "Watch on YouTube"        },
+    { "id": "youtubemusic", "platform": "youtubemusic", "url": "https://music.youtube.com/playlist?list=OLAK5uy_n9LubyMvmY81MMNlxXRNRQgoQJvCrKy88", "ariaLabel": "Listen on YouTube Music" }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "displayName": "Víctor Manuel",
+  "familyName": "Canchola Cervantes",
+  "eyebrow": "Composer & Music Producer",
+  "headline": "Music that builds worlds",
+  "typewriter": [
+    "Video Game Composer",
+    "Foley Designer",
+    "Music Producer",
+    "Arranger",
+    "Sound Designer"
+  ],
+  "description": "I craft sonic experiences for video games, short films, and alternative projects. Querétaro, México.",
+  "ctas": [
+    { "label": "View Portfolio", "href": "/#portfolio", "variant": "primary"   },
+    { "label": "Let's Talk",     "href": "/contact",    "variant": "secondary" }
+  ],
+  "image": {
+    "publicId": "clients/ingenier0espacial/avatar/victor-profile",
+    "alt": "Víctor Manuel Canchola Cervantes, composer and music producer",
+    "width": 600,
+    "height": 720
+  },
+  "badge": {
+    "text": "Available for projects",
+    "visible": true
+  }
+}

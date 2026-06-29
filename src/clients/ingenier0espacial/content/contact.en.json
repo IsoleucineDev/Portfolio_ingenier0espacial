@@ -1,0 +1,38 @@
+{
+  "eyebrow": "Let's Talk",
+  "headline": "Got a world\nto soundtrack?",
+  "description": "Tell me about your project. I'll reply within 24 hours.",
+  "methods": [
+    {
+      "id": "whatsapp",
+      "type": "whatsapp",
+      "label": "WhatsApp",
+      "value": "+52 443 242 3432",
+      "href": "https://wa.me/524432423432?text=Hi%2C%20I'd%20like%20to%20talk%20about%20a%20project.",
+      "cta": "Write on WhatsApp",
+      "primary": true
+    },
+    {
+      "id": "instagram",
+      "type": "social",
+      "label": "Instagram",
+      "value": "@ingenier0espacial",
+      "href": "https://www.instagram.com/ingenier0espacial/",
+      "cta": "DM on Instagram"
+    }
+  ],
+  "form": {
+    "enabled": true,
+    "provider": "formspree",
+    "endpoint": "REPLACE_WITH_FORMSPREE_ID",
+    "fields": [
+      { "name": "name",        "type": "text",     "label": "Name",          "placeholder": "Your name",    "required": true },
+      { "name": "email",       "type": "email",    "label": "Email",         "placeholder": "you@email.com","required": true },
+      { "name": "projectType", "type": "select",   "label": "Project type",  "placeholder": "Select one",   "required": true,
+        "options": ["Video Game Composition", "Short Film / Animation", "Foley / Sound Design", "Music Production", "Arrangements", "Other"] },
+      { "name": "message",     "type": "textarea", "label": "Tell me about your project", "placeholder": "What is it? What's the deadline? Any references?", "required": true }
+    ],
+    "successMessage": "Message sent! I'll get back to you within 24 hours.",
+    "errorMessage": "Something went wrong. Please write to me directly on WhatsApp."
+  }
+}
