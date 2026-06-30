@@ -166,6 +166,29 @@ export default function FloatingNav() {
                 </motion.a>
               )
 
+              if (item.path === '/') return (
+                <motion.a
+                  key={item.id}
+                  href="/"
+                  aria-label={item.label}
+                  aria-current={isActive ? 'page' : undefined}
+                  style={keyBaseStyle}
+                  variants={variants}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover={!isActive ? { y: 2, boxShadow: '0 4px 8px rgba(0,0,0,0.22)' } : {}}
+                  whileTap={{ y: 6, boxShadow: 'inset 0 -0px 0 rgba(0,0,0,0.12)' }}
+                  onClick={e => {
+                    if (isHome) {
+                      e.preventDefault()
+                      window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }
+                  }}
+                >
+                  {keyInner}
+                </motion.a>
+              )
+
               return (
                 <MotionLink
                   key={item.id}
@@ -347,6 +370,23 @@ export default function FloatingNav() {
 
                   if (isHash) return (
                     <a key={item.id} href={item.path} style={rowStyle} onClick={() => setMobileOpen(false)}>
+                      {inner}
+                    </a>
+                  )
+
+                  if (item.path === '/') return (
+                    <a
+                      key={item.id}
+                      href="/"
+                      style={rowStyle}
+                      onClick={e => {
+                        setMobileOpen(false)
+                        if (isHome) {
+                          e.preventDefault()
+                          window.scrollTo({ top: 0, behavior: 'smooth' })
+                        }
+                      }}
+                    >
                       {inner}
                     </a>
                   )

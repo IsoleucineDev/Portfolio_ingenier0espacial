@@ -2,7 +2,6 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { Play, Pause, SkipForward, SkipBack, Disc } from 'lucide-react'
 import { UnderlineDoodle } from '@/components/Doodles'
-import { easeOut } from '@/lib/motionVariants'
 
 const HS = { fontFamily: "'Fredoka', 'Klee One', 'Yomogi', cursive" } as const
 
@@ -104,10 +103,10 @@ export default function DiscographySection() {
         {/* Header */}
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: -65 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.05 }}
-          transition={{ type: 'spring', stiffness: 260, damping: 16, delay: 0.04 }}
+          transition={{ duration: 0.6, ease: [0.25, 1, 0.35, 1], delay: 0.04 }}
         >
           {/* Japanese label row */}
           <div className="flex items-center justify-center gap-3 mb-6">
@@ -155,10 +154,10 @@ export default function DiscographySection() {
           {/* LEFT: Album art card (5/12) */}
           <motion.div
             className="lg:col-span-5 relative"
-            initial={{ opacity: 0, x: -80, rotate: -8 }}
-            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.05 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 22, delay: 0.1 }}
+            transition={{ duration: 0.65, ease: [0.25, 1, 0.35, 1], delay: 0.1 }}
           >
             {/* Rotated shadow card */}
             <div
@@ -301,10 +300,10 @@ export default function DiscographySection() {
           {/* RIGHT: Spotify embed + band info (7/12) */}
           <motion.div
             className="lg:col-span-7 space-y-4"
-            initial={{ opacity: 0, x: 80, rotate: 4 }}
-            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.05 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 22, delay: 0.22 }}
+            transition={{ duration: 0.65, ease: [0.25, 1, 0.35, 1], delay: 0.2 }}
           >
             <div
               className="rounded-3xl overflow-hidden shadow-xl"

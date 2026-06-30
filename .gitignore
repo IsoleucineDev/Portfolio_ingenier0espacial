@@ -6,16 +6,16 @@
 # testing
 /coverage
 
-# next.js
+# build output
+/dist
+/build
 /.next/
 /out/
-
-# production
-/build
 
 # misc
 .DS_Store
 *.pem
+*.tsbuildinfo
 
 # debug
 npm-debug.log*
@@ -25,8 +25,9 @@ yarn-error.log*
 # local env files
 .env*.local
 
-# vercel
+# vercel / netlify
 .vercel
-.next/
-build/
-build/
+
+# Videos >100MB — too large for GitHub (host these externally if needed)
+public/media/Foley_1_Ex.mp4
+public/media/Foley Short Film Example.mp4

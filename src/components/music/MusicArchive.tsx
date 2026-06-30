@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { UnderlineDoodle, StarDoodle, SparkDoodle } from '@/components/Doodles'
 import WashiTape from '@/components/effects/WashiTape'
-import { easeOut } from '@/lib/motionVariants'
 import { useLanguage } from '@/context/LanguageContext'
 
 export interface ArchiveTrack {
@@ -28,6 +27,9 @@ interface MusicArchiveProps {
   bg: string
   icon: React.ReactNode
   washiColor?: 'gold' | 'sage' | 'rose' | 'sky' | 'spring'
+  bgImage?: string
+  nextSectionId?: string
+  nextSectionLabel?: string
 }
 
 const HS   = { fontFamily: "'Fredoka', 'Klee One', 'Yomogi', cursive" } as const
@@ -158,6 +160,9 @@ export default function MusicArchive({
   bg,
   icon,
   washiColor = 'gold',
+  bgImage,
+  nextSectionId,
+  nextSectionLabel,
 }: MusicArchiveProps) {
   const [activeIdx, setActiveIdx] = useState(0)
   const [direction, setDirection] = useState<1 | -1>(1)
@@ -184,11 +189,23 @@ export default function MusicArchive({
       style={{
         background: bg,
         borderTop: `1px solid rgba(84,52,63,0.06)`,
-        paddingTop: 'clamp(5rem, 10vw, 9rem)',
-        paddingBottom: 'clamp(5rem, 10vw, 9rem)',
+        paddingTop: 'clamp(2.5rem, 5vw, 4rem)',
+        paddingBottom: 'clamp(2.5rem, 5vw, 4rem)',
         overflowX: 'clip',
       }}
     >
+      {/* Blurred background photo */}
+      {bgImage && (
+        <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 0 }} aria-hidden>
+          <img
+            src={bgImage}
+            alt=""
+            className="w-full h-full object-cover object-center"
+            style={{ filter: 'blur(5px)', transform: 'scale(1.03)', opacity: 0.32 }}
+          />
+        </div>
+      )}
+
       {/* Floating ambient decorations */}
       <motion.div
         className="absolute top-12 right-10 pointer-events-none"
@@ -213,13 +230,13 @@ export default function MusicArchive({
 
         {/* ── Section Header ─────────────────────────────────────────────── */}
         <motion.div
-          className="text-center mb-14"
-          initial={{ opacity: 0, y: -55 }}
+          className="text-center mb-7"
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.05 }}
-          transition={{ type: 'spring', stiffness: 260, damping: 18, delay: 0.04 }}
+          transition={{ duration: 0.6, ease: [0.25, 1, 0.35, 1], delay: 0.04 }}
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
+          <div className="flex items-center justify-center gap-3 mb-3">
             <div className="h-px flex-1 max-w-[64px]" style={{ background: `${accentColor}50` }} />
             <span className="text-[10px] font-bold tracking-[0.26em] uppercase" style={{ ...MONO, color: accentColor }}>
               {label}
@@ -231,18 +248,18 @@ export default function MusicArchive({
             <span className="mt-3 opacity-70">{icon}</span>
             <h2
               className="text-[#414441] leading-[0.88] text-left"
-              style={{ fontFamily: "'Nerko One', 'Fredoka', cursive", fontWeight: 400, fontSize: 'clamp(2.8rem, 7.5vw, 6rem)' }}
+              style={{ fontFamily: "'Nerko One', 'Fredoka', cursive", fontWeight: 400, fontSize: 'clamp(2.2rem, 4.5vw, 4rem)' }}
             >
               {heading.split(' ').map((word, i) => <span key={i} className="block">{word}</span>)}
             </h2>
           </div>
 
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center mt-2">
             <span style={{ color: accentColor }}><UnderlineDoodle width={200} /></span>
           </div>
 
           <p
-            className="mt-5 max-w-xl mx-auto leading-relaxed"
+            className="mt-2 max-w-xl mx-auto leading-relaxed"
             style={{ fontFamily: "'Caveat', cursive", fontWeight: 600, fontSize: 'clamp(1.05rem, 1.8vw, 1.3rem)', color: 'rgba(84,52,63,0.62)' }}
           >
             {subheading}
@@ -250,14 +267,14 @@ export default function MusicArchive({
         </motion.div>
 
         {/* ── Body ───────────────────────────────────────────────────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-6 items-start">
 
           {/* ── Left: Track List ──────────────────────────────────────── */}
           <motion.div
-            initial={{ opacity: 0, x: -70, rotate: -3 }}
-            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+            initial={{ opacity: 0, x: -28 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.05 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 22, delay: 0.12 }}
+            transition={{ duration: 0.65, ease: [0.25, 1, 0.35, 1], delay: 0.12 }}
           >
             <div
               className="rounded-2xl overflow-hidden"
@@ -354,10 +371,10 @@ export default function MusicArchive({
           {/* ── Right: Vinyl + Player ─────────────────────────────────── */}
           <motion.div
             className="flex flex-col gap-5"
-            initial={{ opacity: 0, y: 80, scale: 0.88 }}
+            initial={{ opacity: 0, y: 30, scale: 0.97 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.05 }}
-            transition={{ type: 'spring', stiffness: 180, damping: 20, delay: 0.2 }}
+            transition={{ duration: 0.7, ease: [0.25, 1, 0.35, 1], delay: 0.18 }}
           >
 
             {/* ── Vinyl disc ──────────────────────────────────────────── */}
@@ -443,10 +460,10 @@ export default function MusicArchive({
             {/* ── Navigation ────────────────────────────────────────── */}
             <motion.div
               className="flex items-center justify-between pt-0.5"
-              initial={{ opacity: 0, y: 18 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.05 }}
-              transition={{ type: 'spring', stiffness: 320, damping: 24, delay: 0.32 }}
+              transition={{ duration: 0.5, ease: [0.25, 1, 0.35, 1], delay: 0.28 }}
             >
               <motion.button
                 onClick={prev}
@@ -495,6 +512,62 @@ export default function MusicArchive({
           </motion.div>
         </div>
       </div>
+
+      {/* ── Scroll-to-next arrow ──────────────────────────────────── */}
+      {nextSectionId && (
+        <div className="flex flex-col items-center pb-8 pt-4 relative z-10">
+          <motion.button
+            onClick={() =>
+              document.getElementById(nextSectionId)?.scrollIntoView({ behavior: 'smooth' })
+            }
+            aria-label={nextSectionLabel ?? 'Ir a la siguiente sección'}
+            animate={{ y: [0, 7, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+            whileHover={{ scale: 1.12 }}
+            whileTap={{ scale: 0.92 }}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 6,
+              background: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              outline: 'none',
+              padding: '8px 16px',
+            }}
+          >
+            {nextSectionLabel && (
+              <span style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '9px',
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                color: accentColor,
+                opacity: 0.7,
+              }}>
+                {nextSectionLabel}
+              </span>
+            )}
+            <div style={{
+              width: 38,
+              height: 38,
+              borderRadius: '50%',
+              border: `1.5px solid ${accentColor}55`,
+              background: `${accentColor}0E`,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <FontAwesomeIcon
+                icon={faChevronRight}
+                rotation={90}
+                style={{ width: 13, height: 13, color: accentColor }}
+              />
+            </div>
+          </motion.button>
+        </div>
+      )}
     </section>
   )
 }

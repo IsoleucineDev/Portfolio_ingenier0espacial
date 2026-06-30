@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useLocation, Outlet } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import FloatingNav from './FloatingNav'
@@ -8,6 +9,10 @@ import { useTheme } from '@/context/ThemeContext'
 export default function AppShell() {
   const { pathname } = useLocation()
   const { theme } = useTheme()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [pathname])
 
   return (
     <div className="min-h-screen bg-canvas text-prose font-body antialiased">

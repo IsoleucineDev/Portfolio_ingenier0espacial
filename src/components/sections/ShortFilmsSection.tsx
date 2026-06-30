@@ -114,6 +114,7 @@ export default function ShortFilmsSection() {
       accentHex="7CA36A"
       bg="rgba(124,163,106,0.055)"
       washiColor="sage"
+      bgImage="/media/IMG_0904.jpg"
       icon={
         <FontAwesomeIcon
           icon={faFilm}

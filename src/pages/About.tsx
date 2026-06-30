@@ -19,6 +19,25 @@ const ORANGE_LIGHT  = '#FFF0E6'
 const GREEN_DARK    = '#48613C'
 const GREEN_MID     = '#7CA36A'
 
+function Planet({ size = 60, color = '#AFE695', ringColor = '#7CA36A' }: { size?: number; color?: string; ringColor?: string }) {
+  const cx = size, cy = size * 0.74, r = size * 0.38
+  const rx = size * 0.92, ry = size * 0.17
+  return (
+    <svg width={size * 2} height={size * 1.48} viewBox={`0 0 ${size * 2} ${size * 1.48}`} aria-hidden>
+      {/* ring — back half */}
+      <ellipse cx={cx} cy={cy} rx={rx} ry={ry} fill="none" stroke={ringColor} strokeWidth={size * 0.055} opacity={0.45}
+        strokeDasharray={`${Math.PI * rx} ${Math.PI * rx}`} strokeDashoffset={`${Math.PI * rx * 0.5}`} />
+      {/* planet body */}
+      <circle cx={cx} cy={cy} r={r} fill={color} opacity={0.82} />
+      {/* subtle highlight */}
+      <circle cx={cx - r * 0.28} cy={cy - r * 0.28} r={r * 0.32} fill="rgba(255,255,255,0.18)" />
+      {/* ring — front half */}
+      <ellipse cx={cx} cy={cy} rx={rx} ry={ry} fill="none" stroke={ringColor} strokeWidth={size * 0.055} opacity={0.82}
+        strokeDasharray={`${Math.PI * rx} ${Math.PI * rx}`} strokeDashoffset={`${-Math.PI * rx * 0.5}`} />
+    </svg>
+  )
+}
+
 function BearSilhouette() {
   return (
     <svg
@@ -120,6 +139,64 @@ export default function About() {
           <StarDoodle size={24} />
         </motion.div>
 
+        {/* ── Green planets ─────────────────────────────────────────────────── */}
+        {/* Large planet — top right */}
+        <motion.div
+          className="absolute pointer-events-none z-20"
+          style={{ top: '6%', right: '18%' }}
+          animate={{ y: [-10, 10, -10], rotate: [0, 8, 0] }}
+          transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+          aria-hidden
+        >
+          <Planet size={52} color="#AFE695" ringColor="#7CA36A" />
+        </motion.div>
+        {/* Small planet — mid left */}
+        <motion.div
+          className="absolute pointer-events-none z-20 hidden md:block"
+          style={{ top: '28%', left: '6%' }}
+          animate={{ y: [8, -8, 8], rotate: [0, -10, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
+          aria-hidden
+        >
+          <Planet size={30} color="#7CA36A" ringColor="#48613C" />
+        </motion.div>
+        {/* Tiny planet — lower right of band */}
+        <motion.div
+          className="absolute pointer-events-none z-20"
+          style={{ top: '44%', right: '6%' }}
+          animate={{ y: [-6, 6, -6] }}
+          transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
+          aria-hidden
+        >
+          <Planet size={22} color="#AFE695" ringColor="#7CA36A" />
+        </motion.div>
+
+        {/* ── Comet ──────────────────────────────────────────────────────────── */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-20" aria-hidden>
+          <motion.div
+            style={{
+              position: 'absolute',
+              top: '18%',
+              left: 0,
+              width: 130,
+              height: 2,
+              borderRadius: 2,
+              background: 'linear-gradient(to right, transparent 0%, rgba(175,230,149,0.85) 60%, rgba(255,255,255,0.95) 100%)',
+              rotate: -28,
+              transformOrigin: 'right center',
+            }}
+            initial={{ x: -160, opacity: 0 }}
+            animate={{ x: ['calc(-10vw)', 'calc(110vw)'], opacity: [0, 1, 1, 0] }}
+            transition={{
+              duration: 1.1,
+              ease: [0.22, 1, 0.36, 1],
+              repeat: Infinity,
+              repeatDelay: 9,
+              times: [0, 0.15, 0.75, 1],
+            }}
+          />
+        </div>
+
         {/* ── HERO ZONE: name + photo ──────────────────────────────────────── */}
         <div
           className="relative z-10 max-w-6xl mx-auto px-5 md:px-10"
@@ -145,7 +222,7 @@ export default function About() {
                     backdropFilter: 'blur(4px)',
                   }}
                 >
-                  自己紹介 — SOBRE MÍ
+                  自己紹介 — ABOUT ME
                 </span>
               </div>
 
@@ -193,7 +270,7 @@ export default function About() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4, duration: 0.6, ease: easeOut }}
               >
-                Compositor · Productor · Diseñador Sonoro
+                Composer · Producer · Sound Designer
               </motion.p>
             </motion.div>
 
@@ -245,7 +322,7 @@ export default function About() {
                   }}
                 >
                   <img
-                    src="/media/manu_3.jpg"
+                    src="/media/manu_1.jpg"
                     alt={about.image.alt}
                     className="w-full h-full object-cover object-top"
                     loading="eager"
@@ -293,7 +370,7 @@ export default function About() {
                 }}
               >
                 <img
-                  src="/media/manu_3.jpg"
+                  src="/media/manu_1.jpg"
                   alt={about.image.alt}
                   className="w-full h-full object-cover object-top"
                   loading="eager"
@@ -412,7 +489,7 @@ export default function About() {
                   className="text-[10px] font-bold tracking-[0.24em] uppercase shrink-0"
                   style={{ ...MONO, color: ORANGE_VIVID }}
                 >
-                  技術 — Habilidades
+                  技術 — Skills
                 </span>
                 <div className="h-px flex-1" style={{ background: `${ORANGE_VIVID}30` }} />
               </div>
