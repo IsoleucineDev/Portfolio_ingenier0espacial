@@ -15,8 +15,8 @@ const FOLEY_VIDEOS: VideoItem[] = [
 ]
 
 const SHORTFILM_VIDEOS: VideoItem[] = [
-  { title: 'Foley_2_Ex', src: '/media/Foley_2_Ex.mp4' },
-  { title: 'Foley_3_Ex', src: '/media/Foley_3_Ex.mp4' },
+  { title: 'Short Film 1', src: '/media/Foley_2_Ex.mp4' },
+  { title: 'Short Film 2', src: '/media/Foley_3_Ex.mp4' },
 ]
 
 export default function FoleySection() {
