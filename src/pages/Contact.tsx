@@ -138,16 +138,12 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (contact.form.endpoint === 'REPLACE_WITH_FORMSPREE_ID') {
-      setFormState('error')
-      return
-    }
     setFormState('loading')
     try {
-      const res = await fetch(`https://formspree.io/f/${contact.form.endpoint}`, {
+      const res = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ 'form-name': 'contact', ...formData }).toString(),
       })
       setFormState(res.ok ? 'success' : 'error')
     } catch {
@@ -409,6 +405,9 @@ export default function Contact() {
                   </motion.div>
                 ) : (
                   <form
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
                     onSubmit={handleSubmit}
                     className="flex flex-col gap-4 rounded-2xl p-6"
                     style={{
@@ -417,6 +416,7 @@ export default function Contact() {
                       boxShadow: '0 2px 18px rgba(84,52,63,0.06)',
                     }}
                   >
+                    <input type="hidden" name="form-name" value="contact" />
                     {contact.form.fields.map((field: {
                       name: string; type: string; label: string;
                       placeholder: string; required: boolean; options?: string[]
