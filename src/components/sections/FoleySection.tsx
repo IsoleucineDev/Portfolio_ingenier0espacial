@@ -14,7 +14,7 @@ const FOLEY_VIDEOS: VideoItem[] = [
   { title: 'Foley_1_Ex',               src: '/media/Foley_1_Ex.mp4' },
   { title: 'Foley_2_Ex',               src: '/media/Foley_2_Ex.mp4' },
   { title: 'Foley_3_Ex',               src: '/media/Foley_3_Ex.mp4' },
-  { title: 'Foley Short Film Example', src: '/media/Foley Short Film Example.mp4' },
+  { title: 'Foley Short Film Example', src: 'https://youtu.be/GS89yfeMNWQ' },
 ]
 
 const SHORTFILM_VIDEOS: VideoItem[] = [
