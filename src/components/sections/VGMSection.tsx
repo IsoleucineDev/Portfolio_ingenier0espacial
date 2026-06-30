@@ -10,9 +10,7 @@ const MONO = { fontFamily: 'var(--font-mono)' } as const
 const VGM_VIDEOS: VideoItem[] = [
   { title: 'Minecraft VGM Style',               src: '/media/Minecraft VGM Style.mp4' },
   { title: 'Persona 5 VGM Style',               src: '/media/Persona 5 VGM Style.mp4' },
-  { title: 'VGM ex1 pt1',                       src: '/media/VGM ex1 pt1.mp4' },
-  { title: 'VGM ex1 pt2',                       src: '/media/VGM ex1 pt2.mp4' },
-  { title: 'Video Game Music Aereo Style pt1',   src: '/media/Video Game Music Aereo Style pt1.mp4' },
+{ title: 'Video Game Music Aereo Style pt1',   src: '/media/Video Game Music Aereo Style pt1.mp4' },
   { title: 'Video Game Music Aereo_Latin Style pt2', src: '/media/Video Game Music Aereo_Latin Style pt2.mp4' },
 ]
 
