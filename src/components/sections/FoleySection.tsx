@@ -11,12 +11,12 @@ const MONO = { fontFamily: 'var(--font-mono)' } as const
 type Tab = 'foley' | 'shortfilm'
 
 const FOLEY_VIDEOS: VideoItem[] = [
-  { title: 'Foley_1_Ex', src: 'https://youtu.be/GS89yfeMNWQ' },
+  { title: 'Foley Short Film', src: 'https://youtu.be/GS89yfeMNWQ' },
 ]
 
 const SHORTFILM_VIDEOS: VideoItem[] = [
-  { title: 'Short Film 1', src: '/media/Foley_2_Ex.mp4' },
-  { title: 'Short Film 2', src: '/media/Foley_3_Ex.mp4' },
+  { title: 'Short Film Music 1', src: '/media/Foley_2_Ex.mp4' },
+  { title: 'Short Film Music 2', src: '/media/Foley_3_Ex.mp4' },
 ]
 
 export default function FoleySection() {
