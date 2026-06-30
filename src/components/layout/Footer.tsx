@@ -23,7 +23,7 @@ export default function Footer() {
           textTransform: 'uppercase',
         }}
       >
-        © 2026 Víctor Manuel Canchola Cervantes · Todos los derechos reservados
+        © 2026 Victor Manuel Canchola Cervantes · Todos los derechos reservados
       </span>
 
       <span

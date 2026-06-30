@@ -239,7 +239,7 @@ export default function About() {
                     textShadow: '0 4px 24px rgba(0,0,0,0.18)',
                   }}
                 >
-                  Víctor Manuel
+                  Victor Manuel
                 </span>
                 {/* Canchola Cervantes — Nerko One */}
                 <span
@@ -444,7 +444,7 @@ export default function About() {
               >
                 <img
                   src="/media/manu_2.jpg"
-                  alt="Víctor Manuel en concierto"
+                  alt="Victor Manuel en concierto"
                   className="w-full h-full object-cover object-[center_30%]"
                 />
                 <div

@@ -45,7 +45,7 @@ export default function HeroSection() {
   const { social } = useContent('navigation')
 
   const sequence: (string | number)[] = hero.typewriter.flatMap(s => [s, 1800])
-  const displayName = hero.displayName ?? 'Víctor Manuel'
+  const displayName = hero.displayName ?? 'Victor Manuel'
   const familyName  = hero.familyName  ?? 'Canchola Cervantes'
 
   return (
